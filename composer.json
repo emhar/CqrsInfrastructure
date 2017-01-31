@@ -1,0 +1,22 @@
+{
+  "name": "emhar/cqrs-infrastructure",
+  "description": "Interfaces and abstract classes to implement in your CQSR framework agnostic application core.",
+  "keywords": ["cqrs"],
+  "homepage": "https://github.com/emhar/CqrsInfrastructure",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Emmanuel Harleaux",
+      "homepage": "https://github.com/emhar"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}
