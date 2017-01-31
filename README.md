@@ -4,7 +4,7 @@ This library gives you interfaces and abstract classes to implement in your CQSR
 
 You can use it on a framework agnostic application core.
 
-You can write your own implementation for your framework or use a symfony implementation, see here.
+You can write your own implementation for your framework or use a symfony implementation, [see here](https://github.com/emhar/CqrsInfrastructureBundle).
 
 ## Installation
 
