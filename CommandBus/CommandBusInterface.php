@@ -17,12 +17,14 @@ interface CommandBusInterface
 {
     /**
      * @param CommandInterface $command
+     * @param bool $enableUserNotification
      * @return mixed
      */
-    public function getCommandResponse(CommandInterface $command);
+    public function getCommandResponse(CommandInterface $command, bool $enableUserNotification = true);
 
     /**
      * @param CommandInterface $command
+     * @param bool $userNotificationEnabled
      */
-    public function postCommand(CommandInterface $command);
+    public function postCommand(CommandInterface $command, bool $userNotificationEnabled = true);
 }

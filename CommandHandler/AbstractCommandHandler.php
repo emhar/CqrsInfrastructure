@@ -14,10 +14,23 @@ namespace Emhar\CqrsInfrastructure\CommandHandler;
 abstract class AbstractCommandHandler
 {
     /**
+     * @var boolean
+     */
+    private $userNotificationEnabled;
+
+    /**
      * @return bool
      */
-    public function eventEnabled(): bool
+    public function isUserNotificationEnabled(): bool
     {
-        return true;
+        return $this->userNotificationEnabled;
+    }
+
+    /**
+     * @param bool $userNotificationEnabled
+     */
+    public function setUserNotificationEnabled(bool $userNotificationEnabled)
+    {
+        $this->userNotificationEnabled = $userNotificationEnabled;
     }
 }

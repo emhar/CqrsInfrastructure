@@ -14,6 +14,27 @@ namespace Emhar\CqrsInfrastructure\Event;
 /**
  * {@inheritDoc}
  */
-interface Event
+abstract class Event
 {
+    /**
+     * @var bool|null
+     */
+    private $userNotificationEnabled;
+
+    /**
+     * @return bool|null
+     */
+    public function isUserNotificationEnabled()
+    {
+        //if null return true
+        return !($this->userNotificationEnabled === false);
+    }
+
+    /**
+     * @param bool $userNotificationEnabled
+     */
+    public function setUserNotificationEnabled(bool $userNotificationEnabled)
+    {
+        $this->userNotificationEnabled = $userNotificationEnabled;
+    }
 }
