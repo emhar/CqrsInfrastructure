@@ -15,6 +15,8 @@ use Emhar\CqrsInfrastructure\Command\CommandInterface;
 
 interface CommandBusInterface
 {
+    const DEFAULT_QUEUE = 'default';
+
     /**
      * @param CommandInterface $command
      * @param bool $enableUserNotification
@@ -25,6 +27,8 @@ interface CommandBusInterface
     /**
      * @param CommandInterface $command
      * @param bool $userNotificationEnabled
+     * @param string $queue
+     * @return
      */
-    public function postCommand(CommandInterface $command, bool $userNotificationEnabled = true);
+    public function postCommand(CommandInterface $command, bool $userNotificationEnabled = true, string $queue = self::DEFAULT_QUEUE);
 }
