@@ -16,6 +16,9 @@ use Emhar\CqrsInfrastructure\Command\CommandInterface;
 interface CommandBusInterface
 {
     const DEFAULT_QUEUE = 'default';
+    const PRIORITY_LOW = -5;
+    const PRIORITY_NORMAL = 0;
+    const PRIORITY_HIGH = 0;
 
     /**
      * @param CommandInterface $command
@@ -28,7 +31,7 @@ interface CommandBusInterface
      * @param CommandInterface $command
      * @param bool $userNotificationEnabled
      * @param string $queue
-     * @return
+     * @param string $priority
      */
-    public function postCommand(CommandInterface $command, bool $userNotificationEnabled = true, string $queue = self::DEFAULT_QUEUE);
+    public function postCommand(CommandInterface $command, bool $userNotificationEnabled = true, string $queue = self::DEFAULT_QUEUE, string $priority = self::PRIORITY_NORMAL);
 }
