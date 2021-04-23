@@ -23,16 +23,20 @@ interface CommandBusInterface
     /**
      * @param CommandInterface $command
      * @param bool $enableUserNotification
+     * @param array $options
      * @return mixed
      */
-    public function getCommandResponse(CommandInterface $command, bool $enableUserNotification = true);
+    public function getCommandResponse(CommandInterface $command, bool $enableUserNotification = true, array $options = array());
 
     /**
      * @param CommandInterface $command
      * @param bool $userNotificationEnabled
      * @param string $queue
-     * @param string $priority
+     * @param string|int $priority
      * @param \DateTime|null $executeAfter
+     * @param bool $isAsync
+     * @param array $options
+     * @param int $retryCounter
      */
-    public function postCommand(CommandInterface $command, bool $userNotificationEnabled = true, string $queue = self::DEFAULT_QUEUE, string $priority = self::PRIORITY_NORMAL, \DateTime $executeAfter = null);
+    public function postCommand(CommandInterface $command, bool $userNotificationEnabled = true, string $queue = self::DEFAULT_QUEUE, string $priority = self::PRIORITY_NORMAL, \DateTime $executeAfter = null, bool $isAsync = false, array $options = array(), int $retryCounter = 0);
 }
