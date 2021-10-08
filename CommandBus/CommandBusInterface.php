@@ -16,9 +16,10 @@ use Emhar\CqrsInfrastructure\Command\CommandInterface;
 interface CommandBusInterface
 {
     const DEFAULT_QUEUE = 'default';
+    const PRIORITY_VERY_LOW = -10;
     const PRIORITY_LOW = -5;
     const PRIORITY_NORMAL = 0;
-    const PRIORITY_HIGH = 0;
+    const PRIORITY_HIGH = 5;
 
     /**
      * @param CommandInterface $command
